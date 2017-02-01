@@ -18,17 +18,17 @@ public class Busquedas
    }
    
    public List<Nodo> anchura(){
-	   cola = new ColaLIFO();
-	   return buscar();
-   }
-   
-   public List<Nodo> profundidad(){
 	   cola = new ColaFIFO();
 	   return buscar();
    }
    
+   public List<Nodo> profundidad(){
+	   cola = new ColaLIFO();
+	   return buscar();
+   }
+   
    public List<Nodo> profundidadLimitada(int limite){
-	   cola = new ColaLimitada(limite);
+	   cola = (Cola) new ColaLimitada(limite);
 	   return buscar();
    }
 
@@ -40,7 +40,7 @@ public class Busquedas
       {  
     	 tiempo++;
     	 Nodo actual = cola.removerNodoFrente();
-    	 //System.out.println(actual.getEstado());
+    	// System.out.println(actual.toString());
          if (problema.funcionObjetivo(actual.getEstado()))
          {  return actual.getRutaDeRaiz();
          }
@@ -67,7 +67,7 @@ public class Busquedas
    
    public void imprimir(List<Nodo> nodos){
 	   if (nodos==null){
-		   System.out.println("No se encontro solución");
+		   System.out.println("No se encontro soluciï¿½n");
 		   return;
 	   }
 	   Iterator<Nodo> it = nodos.iterator();

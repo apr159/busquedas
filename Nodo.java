@@ -1,5 +1,4 @@
 package busquedas;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -62,4 +61,10 @@ public class Nodo
    public Nodo getPadre() {  return padre;}
    public int getProfundidad(){  return profundidad;}
 
+    @Override
+    public String toString() {
+        return "Nodo{" + "estado=" + estado + ", accion=" + accion + ", costoRuta=" + costoRuta + ", padre=" + padre + ", profundidad=" + profundidad + '}';
+    }
+   
+   
 }

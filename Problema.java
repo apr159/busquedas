@@ -7,4 +7,5 @@ public interface Problema {
 	public int getH(Estado e);
 	public Iterator<EstadoSucesor> funcionSucesor(Estado e);
 	public Estado estadoInicial();
+
 }
